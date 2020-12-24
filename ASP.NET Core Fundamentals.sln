@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET Core Fundamentals",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevilDev.Core", "DevilDev.Core\DevilDev.Core.csproj", "{4C04F004-0E35-47EB-A478-2D3CE630BDAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevilDev.Data", "DevilDev.Data\DevilDev.Data.csproj", "{BA26B269-9993-4D1F-9B0C-2DE2F8B65A7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4C04F004-0E35-47EB-A478-2D3CE630BDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C04F004-0E35-47EB-A478-2D3CE630BDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C04F004-0E35-47EB-A478-2D3CE630BDAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA26B269-9993-4D1F-9B0C-2DE2F8B65A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA26B269-9993-4D1F-9B0C-2DE2F8B65A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA26B269-9993-4D1F-9B0C-2DE2F8B65A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA26B269-9993-4D1F-9B0C-2DE2F8B65A7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
