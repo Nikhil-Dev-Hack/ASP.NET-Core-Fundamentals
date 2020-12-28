@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace DevilDev.Data
 {
     public interface IRestaurantData
     {
-        IEnumerable<Restaurant> GetAll();
+        IEnumerable<Restaurant> GetRestaurantsByName(string name);
+        Restaurant GetById(int id);
     }
 
     public class InMemoryRestaurantData : IRestaurantData
@@ -19,14 +21,19 @@ namespace DevilDev.Data
             {
                 new Restaurant { Id = 1 , Name = "Dominos Pizza",Location= "Madhapur" , Cusine = CusineType.Pizza},
                 new Restaurant { Id = 2 , Name = "Burger King" , Location = "Hitech city" , Cusine = CusineType.Burger},
-                new Restaurant { Id = 3 , Name = "Mehfil" , Location = "PagathiNagar" , Cusine = CusineType.Biriyani},
+                new Restaurant { Id = 3 , Name = "Mehfil" , Location = "PragathiNagar" , Cusine = CusineType.Biriyani},
                 new Restaurant { Id = 4 , Name = "None" , Location = "Earth" , Cusine = CusineType.None}
 
             };
         }
-        public IEnumerable<Restaurant> GetAll()
+        public Restaurant GetById(int id)
+        {
+            return restaurants.SingleOrDefault(r => r.Id == id);
+        }
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
+                   where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
         }

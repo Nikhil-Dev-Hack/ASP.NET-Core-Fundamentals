@@ -1,6 +1,51 @@
 ﻿@page
 @model ASP.NET_Core_Fundamentals.Pages.Restaurants.ListsModel
 @{
+    ViewData["Title"] = "List";
 }
 
+
 <h1>Hello Nikhil</h1>
+<label><b>Below are the list of Restaurants</b></label>
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-default">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+
+        </div>
+    </div>
+</form>
+<table class="table">
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Name</td>
+            <td>@restaurant.Location</td>
+            <td>@restaurant.Cusine</td>
+            <td>
+                @*href="/Restaurants/Detail?restaurantId = @restaurant.Id"*@
+                <a class="btn btn-lg"
+                   asp-page="./Detail"
+                   asp-route-restaurantID="@restaurant.Id">
+                    <i class="fab fa-searchengin"></i>
+                </a>
+
+                <a class="btn btn-lg"
+                   asp-page="./Edit"
+                   asp-route-restaurantID="@restaurant.Id">
+                    <i class="fas fa-user-edit"></i>
+                </a>
+
+
+
+
+            </td>
+        </tr>
+    }
+</table>

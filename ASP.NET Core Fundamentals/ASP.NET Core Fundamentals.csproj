@@ -6,7 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Images\Image.png" />
+    <PackageReference Include="bootstrap" Version="4.5.3" />
+    <PackageReference Include="jQuery" Version="3.5.1" />
+    <PackageReference Include="Twitter.Bootstrap" Version="3.0.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DevilDev.Data\DevilDev.Data.csproj" />
   </ItemGroup>
 
 </Project>
