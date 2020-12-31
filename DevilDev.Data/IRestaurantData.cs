@@ -10,6 +10,8 @@ namespace DevilDev.Data
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
         Restaurant GetById(int id);
+        Restaurant Update(Restaurant UpdatedRestaurant);
+        int Commit();
     }
 
     public class InMemoryRestaurantData : IRestaurantData
@@ -30,6 +32,19 @@ namespace DevilDev.Data
         {
             return restaurants.SingleOrDefault(r => r.Id == id);
         }
+
+        public Restaurant Update(Restaurant UpdatedRestaurant)
+        {
+            var restaurant = restaurants.SingleOrDefault(r => r.Id == UpdatedRestaurant.Id);
+            if (restaurant != null)
+            {
+                restaurant.Name = UpdatedRestaurant.Name;
+                restaurant.Location = UpdatedRestaurant.Location;
+                restaurant.Cusine = UpdatedRestaurant.Cusine;
+            }
+            return restaurant;
+        }
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
@@ -37,5 +52,11 @@ namespace DevilDev.Data
                    orderby r.Name
                    select r;
         }
+
+        public int Commit()
+        {
+            return 0;
+        }
+
     }
 }
